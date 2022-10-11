@@ -103,6 +103,15 @@ html{
   --cl-accent: 54, 100%, 50%;
   --cl-gray-400: 0, 0%, 25%;
   --cl-gray-300: 0, 0%, 92%;
+
+  --text-ln-600: 1.5em; 
+  --text-ln-500: 1.3;
+
+  --text-sz-700: 2rem;
+  --text-sz-600: 1.5rem;
+  --text-sz-500: 1.3rem;
+  --text-sz-400: 1rem;
+  --text-sz-300: .7rem;
 }
 
 .body{
@@ -114,6 +123,7 @@ html{
 =================*/
 
 .alpha-5{--alpha: .5;}
+.alpha-none{--alpha: 1;}
 
 .bg-primary{background-color: hsla(var(--cl-primary), var(--alpha, 1));} 
 .bg-secondary{background-color: hsla(var(--cl-secondary), var(--alpha, 1));}
@@ -125,13 +135,14 @@ html{
 .text-cl-accent{color: hsla(var(--cl-accent), var(--alpha, 1));}
 .text-cl-gray{color: hsla(var(--cl-gray-400), var(--alpha, 1));}
 
-.text-ln-600{ line-height: 1.5em;}
-.text-ln-500{ line-height: 1.3;}
+.text-ln-600{ line-height: var(--text-ln-600)}
+.text-ln-500{ line-height: var(--text-ln-500)}
 
-.text-sz-600{font-size: 2rem;}
-.text-sz-500{font-size: 1.3rem;}
-.text-sz-400{font-size: 1rem;}
-.text-sz-300{font-size: 0.7rem;}
+.text-sz-700{font-size: var(--text-sz-700)}
+.text-sz-600{font-size: var(--text-sz-600)}
+.text-sz-500{font-size: var(--text-sz-500)}
+.text-sz-400{font-size: var(--text-sz-400)}
+.text-sz-300{font-size: var(--text-sz-300)}
 
 .button-md{
   padding-inline: 3em;
@@ -144,12 +155,6 @@ html{
 
 .hidden{
   display: none;
-}
-
-.subtitle{
-  font-size: 1.5rem;
-  font-weight: bold;
-  border-bottom: solid 2px hsla(var(--cl-accent), var(--alpha, 1));
 }
 
 .main-grid{
@@ -184,4 +189,35 @@ html{
   justify-self: start;
 }
 
+.info-card{
+  margin-block: 1.5em;
+  text-align: center;
+  line-height: var(--text-ln-600);
+}
 
+.info-card > p strong{
+  font-weight: 600;
+  color: hsla(var(--cl-gray-400), var(--alpha, 1));
+}
+
+.subtitle{
+  padding-block: .5em;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-bottom: solid 2px hsla(var(--cl-accent), var(--alpha, 1));
+}
+
+.subtitle + *{
+  margin-top: .5em;
+}
+
+.footer{
+  padding-block: 2em;
+  row-gap: 1em;
+  text-align: center;
+}
+
+.footer__social-networks{
+  display: flex;
+  justify-content: center;
+}
