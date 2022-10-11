@@ -6,46 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <title>Jake&Elwood</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Jake&Elwood</title>  
   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 </head>
-<body class="body leading-6">  
-  <header class="flex justify-between items-center px-6 bg-secondary text-white">
-    <img class="h-full pt-8 bg-accent" src="./img/logo.png" alt="Jake & Elwood logo">
-    <div class="h-10 w-10 bg-gray-400"></div>
+<body class="body text-cl-primary">
+  <header class="header main-grid text-cl-primary bg-secondary">
+    <img class="logo bg-accent" src="./img/logo.png" alt="logo">
+    <nav class="hidden">
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">about us</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </nav>
+    <iconify-icon class="hamburger hidden" icon="charm:menu-hamburger"></iconify-icon>
   </header>
   <main>
-    <section class="hero grid py-20 bg-secondary text-cl-primary">
-      <h1 class="font-bold text-3xl">The only marketing agency on <span class="text-cl-accent">a mission from God</span>, fully dedicated to increase your web traffic. </h1>
-      <p class="">We’re two brothers from Chicago that are trying to pay back our debt. We can help you with <span class="font-bold">SEO, SEM content marketing</span> and whatever else.</p>
-      <a class="p-5 max-w-[10rem] bg-accent text-cl-secondary font-bold" href="#">Contact us</a>
+    <section class="hero main-grid bg-secondary">
+      <h1 class="text-sz-500 text-ln-500 bold">The only marketing agency on <span class="text-cl-accent">a mission from God</span>, fully dedicated to increase your web traffic. </h1>
+      <p class="text-sz-400 text-ln-600">We’re two brothers from Chicago that are trying to pay back our debt. We can help you with <span class="bold">SEO, SEM content marketing</span> and whatever else.</p>
+      <a class="button-md text-sz-400 bg-accent text-cl-secondary" href="#">contact us</a>
     </section>
-    <section class="content grid justify-center gap-7 bg-primary text-cl-secondary">
-      <div class=" flex flex-col max-w-sm  items-center max-w-sm text-center">
-        <h2 class="subtitle font-bold">About us</h2>
-        <p>About Us We grew up in downtown Chicago, and we used to play in a band. Jake loves fried chicken, and Elwood loves dry white toast.</p>
+    <section class="info">
+      <div class="info-card">
+          <h2 class="subtitle">About Us</h2>
+          <p>We grew up in downtown Chicago, and we used to play in a band. Jake loves fried chicken, and Elwood loves dry white toast.</p>
       </div>
-      <div class="flex flex-col  max-w-sm  items-center text-center">
-        <h2 class="subtitle font-bold">Our skills</h2>
+      <div class="info-card">
+        <h2 class="subtitle">Our skills</h2>
         <p>Elwood is an expert in SEO, SEM, and driving from the police. Jake is our social media specialist, and he has an amazing voice.</p>
-      </div> 
-      <div class=" flex flex-col max-w-sm   items-center max-w-sm text-center">
-        <h2 class="subtitle font-bold">Get in touch</h2>
+      </div>
+      <div class="info-card">
+        <h2 class="subtitle">Get in touch</h2>
         <p>Send us an email with some info about what help you need and we’ll drive over to your place in our Bluesmobile the following day to discuss the deal.</p>
-      </div> 
+      </div>
     </section>
   </main>
-  <footer class="flex flex-col gap-2 text-center md:flex-row-reverse md:text-left p-10 py-12 bg-gray-300 alpha-5 text-cl-gray">
-    <div class="flex gap-2 text-2xl justify-center">
-      <iconify-icon icon="entypo-social:facebook"></iconify-icon>
-      <iconify-icon icon="akar-icons:twitter-fill"></iconify-icon>
-      <iconify-icon icon="akar-icons:instagram-fill"></iconify-icon>
-    </div> 
-    <div class="grow">
-      <h2 class="text-2xl font-bold">Jake&Elwood</h2>
-      <p class="max-w-lg"> Two brothers from Chicago that are just trying to pay back their debt by helping others with their SEO, SEM, and Content Marketing needs.</p>
-      <p class="mt-16">© Jake&Elwood 2019</p>
+  <footer class="footer">
+    <ul class="footer__social-networks">
+      <li><iconify-icon icon="entypo-social:facebook"></iconify-icon></li>
+      <li><iconify-icon icon="akar-icons:twitter-fill"></iconify-icon></li>
+      <li><iconify-icon icon="akar-icons:instagram-fill"></iconify-icon></li>
+    </ul>
+    <div class="footer__content">
+      <h2>Jake&Elwood</h2>
+      <p>Two brothers from Chicago that are just trying to pay back their debt by helping others with their SEO, SEM, and Content Marketing needs.</p>
+      <p>© Jake&Elwood 2019</p>
     </div>
   </footer>
 </body>
