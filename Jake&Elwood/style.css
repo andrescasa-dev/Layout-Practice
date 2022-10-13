@@ -98,6 +98,7 @@ meter {
 =================*/
 
 html{
+
   --cl-primary: 0, 0%, 100%; /* white */
   --cl-secondary: 0, 0%, 0%;
   --cl-accent: 54, 100%, 50%;
@@ -121,7 +122,6 @@ html{
 /*================= 
       utilities
 =================*/
-
 .alpha-5{--alpha: .5;}
 .alpha-none{--alpha: 1;}
 
@@ -160,7 +160,7 @@ html{
 .main-grid{
   display: grid;
   /* col-padding content col-padding */
-  grid-template-columns: minmax(2rem, 1fr) minmax(0rem, 40rem) minmax(2rem, 1fr);
+  grid-template-columns: minmax(4rem, 1fr) minmax(0rem, 40rem) minmax(4rem, 1fr);
 }
 
 .subtitle{
@@ -176,30 +176,81 @@ html{
 
 @media (min-width: 768px) {
   .main-grid{
-    grid-template-columns: minmax(2rem, 1fr) repeat(3, minmax(9rem, 20rem))  minmax(2rem, 1fr);
+    grid-template-columns: minmax(2rem, 1fr) repeat(3, minmax(12rem, 20rem))  minmax(2rem, 1fr);
     column-gap: 2.5rem;
   }
 }
 
 /*================= 
-    utilities 
+    UTILITIES 
 =================*/
 
 .body{
   font-family: 'Montserrat', sans-serif;
 }
 
-.header .logo{
-  padding-top: 2.5em;
-}
-
 /*================= 
     HEADER 
 =================*/
 
-
-.header *{
+.header{
   grid-column: 2 / -2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header .logo{
+  padding-top: 2.5em;
+}
+
+.header .hamburger{
+  z-index: 2;
+}
+
+.header .nav{
+  z-index: 1;
+}
+
+/*for convenience nav-content isn't mobile first. Because in this case mobile views are more complex*/
+/*side bar*/
+/* > md screens*/
+.nav-content{
+  position: relative;
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .nav-content{
+    position: absolute;
+    flex-direction: column;
+    min-width: 18rem;
+    top: 0;
+    right: 0;
+    padding: 2rem 3rem;
+    height: 100vh;
+    background-color: rgb(32, 32, 32);
+    translate: 100%;
+    transition: translate .7s ease-out;
+    z-index: 1;
+  }
+}
+
+.open{
+  translate: 0;
+}
+/*side bar*/
+
+@media (min-width: 768px) {
+  .header{
+    justify-content: start;
+  }
+
+  .hamburger{
+    display: none;
+  }
 }
 
 /*================= 
@@ -289,5 +340,9 @@ html{
 @media (min-width: 768px) {
   .footer{
     grid-template-areas: ". content content social .";
+    text-align: left;
+  }
+  .footer__social-networks{
+    justify-content: end
   }
 }
