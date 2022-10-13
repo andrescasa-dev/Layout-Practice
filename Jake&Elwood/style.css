@@ -205,36 +205,45 @@ html{
   padding-top: 2.5em;
 }
 
-.header .hamburger{
-  z-index: 2;
-}
-
-.header .nav{
-  z-index: 1;
-}
-
 /*for convenience nav-content isn't mobile first. Because in this case mobile views are more complex*/
 /*side bar*/
 /* > md screens*/
-.nav-content{
+.nav__list{
   position: relative;
   display: flex;
   gap: 2rem;
 }
 
+.nav__close{
+  display: none;
+  font-size: 3rem;
+  align-self: flex-start;
+}
+
 @media (max-width: 768px) {
-  .nav-content{
-    position: absolute;
-    flex-direction: column;
+  .nav{
+    display: flex;
+    gap: 3rem;
+    position: fixed;
     min-width: 18rem;
     top: 0;
     right: 0;
-    padding: 2rem 3rem;
+    padding: 1rem 2rem;
     height: 100vh;
     background-color: rgb(32, 32, 32);
     translate: 100%;
     transition: translate .7s ease-out;
-    z-index: 1;
+  }
+
+  .nav__close{
+    display: block;
+    font-size: 3rem;
+    align-self: flex-start;
+  }
+
+  .nav__list{
+    padding-top: 1.2rem;
+    flex-direction: column;
   }
 }
 
