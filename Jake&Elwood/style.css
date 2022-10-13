@@ -216,8 +216,14 @@ html{
 
 .nav__close{
   display: none;
+  color: hsla(var(--cl-accent), var(--alpha, 1));
   font-size: 3rem;
   align-self: flex-start;
+}
+
+.nav__list > li:hover,
+.nav__list > li:focus{
+  color: hsla(var(--cl-accent), var(--alpha, 1));
 }
 
 @media (max-width: 768px) {
@@ -237,7 +243,6 @@ html{
 
   .nav__close{
     display: block;
-    font-size: 3rem;
     align-self: flex-start;
   }
 
@@ -245,6 +250,11 @@ html{
     padding-top: 1.2rem;
     flex-direction: column;
   }
+  
+  .nav__list > li{
+    font-size: var(--text-sz-500);
+  }
+  
 }
 
 .open{
