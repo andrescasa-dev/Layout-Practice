@@ -148,7 +148,19 @@ html{
   padding-inline: 3em;
   padding-block: 1em;
   background-color: hsla(var(--cl-accent), var(--alpha, 1));
+  border: 2px solid hsla(var(--cl-accent), var(--alpha, 1));
   font-weight: bold;
+  transition-property: background-color, border, color;
+  transition-timing-function: ease-out;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.button-md:hover,
+.button-md:focus{
+  background-color: hsla(var(--cl-secondary), var(--alpha, 1));
+  border: 2px solid hsla(var(--cl-accent), var(--alpha, 1));
+  color: hsla(var(--cl-accent), var(--alpha, 1));
 }
 
 .bold{
@@ -210,7 +222,7 @@ html{
 
 @media (min-width: 768px) {
   .main-grid{
-    grid-template-columns: minmax(2rem, 1fr) repeat(3, minmax(12rem, 23rem))  minmax(2rem, 1fr);
+    grid-template-columns: minmax(2rem, 1fr) repeat(3, minmax(0rem, 23rem))  minmax(2rem, 1fr);
     column-gap: 2.5rem;
   }
 }
@@ -513,10 +525,15 @@ Because in this case mobile views are more complex*/
     IMG 
 =================*/
 
+.main-about-us .main__img{
+  min-width: 15rem;
+}
+
 .main__img{
   position: relative;
   grid-area: image;
   box-shadow: 9px 6px 1px 0px rgba(0,0,0,0.75);
+  margin-bottom: 2rem;
 }
 
 .main__img img{
@@ -540,9 +557,8 @@ Because in this case mobile views are more complex*/
 .main__info{
   grid-area: info;
   display: flex;
-  gap: 1.5em;
   flex-direction: column;
-  
+  gap: 3em;  
 }
 
 .main-about-us .info-card{
@@ -577,13 +593,10 @@ Because in this case mobile views are more complex*/
   font-weight: 500;
 }
 
-.form__item input{
-  padding: .5em;
-}
-
-.form input{
-  border: 2px solid hsla(var(--cl-gray-400), var(--alpha, .3));
+.form input, .form textarea{
   flex-grow: 1;
+  padding: .5em;
+  border: 2px solid hsla(var(--cl-gray-400), var(--alpha, .3));
 }
 
 .form__message{
@@ -599,7 +612,7 @@ Because in this case mobile views are more complex*/
 
 @media (min-width: 768px) {
   .form{
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0rem, 1fr));
     column-gap: 2rem;
   }
 
